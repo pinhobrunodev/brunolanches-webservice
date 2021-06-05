@@ -9,7 +9,7 @@
 - [X] Implement User class
 - [X] Implement DTO
 - [X] Implement UserRepository
-- [ ] Implement UserMapper
+- [X] Implement UserMapper
 - [ ] Implement UserService
 - [ ] Implement UserController
 - [ ] Implement UserExceptions
