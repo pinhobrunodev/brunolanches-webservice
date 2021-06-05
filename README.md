@@ -16,7 +16,7 @@
     <li> - [ ] findByName()</li>
     <li> - [ ] insert()</li>
     <li> - [ ] update()</li>
-    <li> - [ ] remove()</li>
+    <li> - [ ] delete()</li>
   </ul>
 - [ ] Implement UserController
 - [ ] Implement UserExceptions
@@ -33,7 +33,7 @@
 |------:	|-------------------------	|---------------------------------	|
 | USER  	| GET /USERS              	| List all users by birth order   	|
 | USER  	| GET /USERS/{name}/FOUND 	| List user by name               	|
-| USER  	| POST /USERS               | Insert a user                   	|
-| USER  	| PUT USERS/{id}/UPDATED    | Update a user by setting the id 	|
-| USER  	| DELETE USERS/{id}/REMOVED | Delete a user by ID 	            | 
+| USER  	| POST /USERS                 | Insert a user                   	|
+| USER  	| PUT USERS/UPDATED           | Update a user                	|
+| USER  	| DELETE USERS/{id}/REMOVED   | Delete a user by ID 	            | 
 
