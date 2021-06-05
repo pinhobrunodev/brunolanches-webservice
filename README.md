@@ -11,6 +11,13 @@
 - [X] Implement UserRepository
 - [X] Implement UserMapper
 - [ ] Implement UserService
+      <ul>
+  <li> - [ ] findAllByBirthDateOrderASC()</li>
+    <li> - [ ] findByName()</li>
+    <li> - [ ] insert()</li>
+    <li> - [ ] update()</li>
+    <li> - [ ] remove()</li>
+  </ul>
 - [ ] Implement UserController
 - [ ] Implement UserExceptions
 - [ ] Implement Validations in the UserService class
@@ -26,5 +33,7 @@
 |------:	|-------------------------	|---------------------------------	|
 | USER  	| GET /USERS              	| List all users by birth order   	|
 | USER  	| GET /USERS/{name}/FOUND 	| List user by name               	|
-| USER  	| /POST                   	| Insert a user                   	|
-| USER  	| /PUT/{id}/UPDATED       	| Update a user by setting the id 	|
+| USER  	| POST /USERS               | Insert a user                   	|
+| USER  	| PUT USERS/{id}/UPDATED    | Update a user by setting the id 	|
+| USER  	| DELETE USERS/{id}/REMOVED | Delete a user by ID 	            | 
+
