@@ -18,7 +18,7 @@
 
 
 
-# Endpoints do projeto
+# Project Endpoints
 
 ## Class User
 
