@@ -1,4 +1,4 @@
-package com.pinhobrunodev.brunolanches.repositories.dto;
+package com.pinhobrunodev.brunolanches.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;

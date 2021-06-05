@@ -2,9 +2,9 @@ package com.pinhobrunodev.brunolanches.mapper;
 
 import org.springframework.stereotype.Component;
 
+import com.pinhobrunodev.brunolanches.dto.UserDTO;
+import com.pinhobrunodev.brunolanches.dto.UserInsertDTO;
 import com.pinhobrunodev.brunolanches.entites.User;
-import com.pinhobrunodev.brunolanches.repositories.dto.UserDTO;
-import com.pinhobrunodev.brunolanches.repositories.dto.UserInsertDTO;
 
 @Component
 public class UserMapper {
