@@ -16,7 +16,7 @@
     <li> - [ ] findByName()</li>
     <li> - [ ] insert()</li>
     <li> - [ ] update()</li>
-    <li> - [ ] remove()</li>
+    <li> - [ ] delete()</li>
   </ul>
 - [ ] Implement UserController
 - [ ] Implement UserExceptions
