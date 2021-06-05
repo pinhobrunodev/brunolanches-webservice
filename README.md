@@ -8,7 +8,7 @@
 
 - [X] Implement User class
 - [ ] Implement DTO
-- [ ] Implement UserRepository
+- [X] Implement UserRepository
 - [ ] Implement UserMapper
 - [ ] Implement UserService
 - [ ] Implement UserController
