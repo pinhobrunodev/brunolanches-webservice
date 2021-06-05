@@ -37,7 +37,7 @@ public class User implements Serializable {
 	@NotNull(message = "CPF cannot be null")
 	@CPF(message = "Enter a valid CPF")
 	private String cpf;
-	@NotNull
+	@NotNull(message = "Date cannot be null")
 	@JsonFormat(shape = Shape.STRING, pattern = "dd/MM/yyyy")
 	private LocalDate date;
 
