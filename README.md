@@ -7,7 +7,7 @@
 ### User Tasks
 
 - [X] Implement User class
-- [ ] Implement DTO
+- [X] Implement DTO
 - [X] Implement UserRepository
 - [ ] Implement UserMapper
 - [ ] Implement UserService
