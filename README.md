@@ -10,14 +10,14 @@
 - [X] Implement DTO
 - [X] Implement UserRepository
 - [X] Implement UserMapper
-- [ ] Implement UserService
+- [X] Implement UserService
       <ul>
-  <li> - [ ] findAllByBirthDateOrderASC()</li>
-    <li> - [ ] findByName()</li>
-    <li> - [ ] insert()</li>
-    <li> - [ ] update()</li>
-    <li> - [ ] delete()</li>
-  </ul>
+    <li> - [X] findAllByBirthDateOrderASC()</li>
+    <li> - [X] findByName()</li>
+    <li> - [X] insert()</li>
+    <li> - [X] update()</li>
+    <li> - [X] delete()</li>
+      </ul>
 - [ ] Implement UserController
 - [ ] Implement UserExceptions
 - [ ] Implement Validations in the UserService class
