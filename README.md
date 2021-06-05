@@ -1,10 +1,10 @@
-# brunolanches-webservice
+# 🎯 brunolanches-webservice
 
 
 
-# TaskLists
+# 📝 TaskLists
 
-### User Tasks
+### 🧔🏻  User Tasks
 
 - [X] Implement User class
 - [X] Implement DTO
@@ -18,7 +18,7 @@
 
 
 
-# Project Endpoints
+# 📌 Project Endpoints
 
 ## Class User
 
