@@ -1,6 +1,20 @@
 # brunolanches-webservice
 
 
+
+# TaskLists
+- [ ] Implement User class
+- [ ] Implement DTO
+- [ ] Implement UserRepository
+- [ ] Implement UserMapper
+- [ ] Implement UserService
+- [ ] Implement UserController
+- [ ] Implement UserExceptions
+- [ ] Implement Validations in the UserService class
+
+
+
+
 # Endpoints do projeto
 
 ## Class User
