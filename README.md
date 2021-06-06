@@ -14,7 +14,7 @@
 - H2 Database
 
 
-## Class Diagram
+## 📋 Class Diagram
 
 ### (Building... 🛠)
 
