@@ -78,18 +78,29 @@
 # 📌 Project Endpoints
 
 
-| CLASS 	| ENDPOINT                	| OBJECTIVE                       	|
-|------:	|-------------------------	|---------------------------------	|
-| USER  	| GET /users              	| List all users by birth order   	|
-| USER  	| GET /users/{name}/found 	| List user by name               	|
-| USER  	| POST /users                 | Insert a user                   	|
-| USER  	| PUT users/updated           | Update a user                	|
-| USER  	| DELETE users/{id}/removed   | Delete a user by ID 	            | 
-|DELIVERYMAN| GET /deliverymans           | List all deliverymans by registered date 	            | 
-|DELIVERYMAN| GET /deliverymans/{email}/found          | List  deliverymans by  email 	            | 
-|DELIVERYMAN| POST /deliverymans           | Insert a Deliveryman 	            | 
-|DELIVERYMAN| PUT /deliverymans/updated           | Update a deliveryman 	            | 
-|DELIVERYMAN| DELETE /deliverymans/{ID}/removed          | Delete a deliveryman by ID 		            | 
+### User Class
+
+| HTTP VERB 	|       ENPOINT       	| OBJECTIVE                     	|
+|-----------	|:-------------------:	|-------------------------------	|
+| GET       	| /users              	| List all users by birth order 	|
+| GET       	| /users/{name}/found 	| List user by name             	|
+| POST      	| /user               	| Insert a user                 	|
+| PUT       	| /user/updated       	| Update a user                 	|
+| DELETE    	| /user/{id}/removed  	| Delete a user by id           	|
+
+
+
+### Deliveryman Class
+
+| HTTP VERB 	|       ENPOINT       	| OBJECTIVE                     	|
+|-----------	|:-------------------:	|-------------------------------	|
+| GET       	| /deliverymans              	| List all deliverymans by registered date 	|
+| GET       	| /deliverymans/{email}/found 	| List  deliverymans by  email              	|
+| POST      	| /deliverymans            	| Insert a Deliveryman                	|
+| PUT       	|/deliverymans/updated      	|  Update a deliveryman                  	|
+| DELETE    	| /deliverymans/{ID}/removed  	| Delete a deliveryman by ID           	|
+
+
 
 
 
