@@ -13,7 +13,7 @@ public class UserMapper {
 	public User toEntity(UserInsertDTO dto) {
 		User entity = new User();
 		entity.setId(dto.getId());
-		entity.setName(dto.getName());
+		entity.setName(dto.getName().substring(0,1).toUpperCase().concat(dto.getName().substring(1)));
 		entity.setEmail(dto.getEmail());
 		entity.setPhone(dto.getPhone());
 		entity.setDate(dto.getDate());
