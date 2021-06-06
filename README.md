@@ -19,8 +19,8 @@
     <li> - [X] delete()</li>
       </ul>
 - [ ] Implement UserController
-- [ ] Implement UserExceptions
-- [ ] Implement Validations in the UserService class
+- [X] Implement UserExceptions
+- [X] Implement Validations in the UserService class
 
 
 
