@@ -98,7 +98,7 @@
 | GET       	| /deliverymans/{email}/found 	| List  deliverymans by  email              	|
 | POST      	| /deliverymans            	| Insert a Deliveryman                	|
 | PUT       	|/deliverymans/updated      	|  Update a deliveryman                  	|
-| DELETE    	| /deliverymans/{ID}/removed  	| Delete a deliveryman by ID           	|
+| DELETE    	| /deliverymans/{id}/removed  	| Delete a deliveryman by ID           	|
 
 
 
