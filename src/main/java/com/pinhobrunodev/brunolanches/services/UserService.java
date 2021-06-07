@@ -32,6 +32,8 @@ public class UserService {
 		Optional<User> validationUserEmail = repository.findByEmail(dto.getEmail());
 		Optional<User> validationUserPhone = repository.findByPhone(dto.getPhone());
 		Optional<User> validationUserCpf = repository.findByCpf(dto.getCpf());
+		Optional<User> validationAdressAndNumberHouse = repository.findByAdressAndNumber(dto.getAdress(),
+				dto.getNumber());
 		if (validationUserInsert.isPresent()) {
 			throw new ExceptionUserBusiness(UserMessageUtils.USER_ALREADY_EXISTS);
 		}
@@ -43,6 +45,9 @@ public class UserService {
 		}
 		if (validationUserCpf.isPresent()) {
 			throw new ExceptionUserBusiness(UserMessageUtils.CPF_ALREADY_EXISTS);
+		}
+		if (validationAdressAndNumberHouse.isPresent()) {
+			throw new ExceptionUserBusiness(UserMessageUtils.ADRESS_ALREADY_EXISTS);
 		}
 		User entity = mapper.toEntity(dto);
 		repository.save(entity);
@@ -56,6 +61,8 @@ public class UserService {
 		Optional<User> validationUserEmailUpdate = repository.findByEmailAndId(dto.getEmail(), dto.getId());
 		Optional<User> validationUserPhoneUpdate = repository.findByPhoneAndId(dto.getPhone(), dto.getId());
 		Optional<User> validationUserCpfUpdate = repository.findByCpfAndId(dto.getCpf(), dto.getId());
+		Optional<User> validationAdressAndNumberHouseAnId = repository.findByAdressAndNumberAndId(dto.getAdress(),
+				dto.getNumber(), dto.getId());
 		if (validationUserUpdate.isPresent()) {
 			throw new ExceptionUserBusiness(UserMessageUtils.USER_ALREADY_EXISTS);
 		}
@@ -67,6 +74,9 @@ public class UserService {
 		}
 		if (validationUserCpfUpdate.isPresent()) {
 			throw new ExceptionUserBusiness(UserMessageUtils.CPF_ALREADY_EXISTS);
+		}
+		if (validationAdressAndNumberHouseAnId.isPresent()) {
+			throw new ExceptionUserBusiness(UserMessageUtils.ADRESS_ALREADY_EXISTS);
 		}
 		User entity = mapper.toEntity(dto);
 		repository.save(entity);

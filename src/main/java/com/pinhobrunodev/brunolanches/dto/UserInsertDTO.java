@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.pinhobrunodev.brunolanches.entites.User;
 
-public class UserInsertDTO implements Serializable{
+public class UserInsertDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 	private String name;
 	private String phone;
@@ -18,12 +18,15 @@ public class UserInsertDTO implements Serializable{
 	@JsonFormat(shape = Shape.STRING, pattern = "dd/MM/yyyy")
 	private LocalDate date;
 	private String cpf;
-	
+	private String adress;
+	private String number;
+
 	public UserInsertDTO() {
-		
+
 	}
-	
-	public UserInsertDTO(Long id, String name, String phone, String email, LocalDate date, String cpf) {
+
+	public UserInsertDTO(Long id, String name, String phone, String email, LocalDate date, String cpf, String adress,
+			String number) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -31,10 +34,12 @@ public class UserInsertDTO implements Serializable{
 		this.email = email;
 		this.date = date;
 		this.cpf = cpf;
+		this.adress = adress;
+		this.number = number;
 	}
-	
+
 	// data that will be entered into the client-side
-	
+
 	public UserInsertDTO(User entity) {
 		id = entity.getId();
 		name = entity.getName();
@@ -42,6 +47,8 @@ public class UserInsertDTO implements Serializable{
 		email = entity.getEmail();
 		date = entity.getDate();
 		cpf = entity.getCpf();
+		adress = entity.getAdress();
+		number = entity.getNumber();
 	}
 
 	public Long getId() {
@@ -91,6 +98,23 @@ public class UserInsertDTO implements Serializable{
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	
+	
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
 
 	@Override
 	public int hashCode() {
@@ -116,10 +140,5 @@ public class UserInsertDTO implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
+
 }

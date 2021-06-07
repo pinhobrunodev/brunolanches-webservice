@@ -40,18 +40,24 @@ public class User implements Serializable {
 	@NotNull(message = "Date cannot be null")
 	@JsonFormat(shape = Shape.STRING, pattern = "dd/MM/yyyy")
 	private LocalDate date;
-
+	@NotNull(message = "Adress cannot be null")
+	private String adress;
+	@NotNull(message = "Number of the house cannot be null")
+	private String number;
+	
 	public User() {
 
 	}
 
-	public User(Long id, String name, String phone, String email, String cpf, LocalDate date) {
+	public User(Long id, String name, String phone, String email, String cpf, LocalDate date,String adress,String number) {
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
 		this.cpf = cpf;
 		this.date = date;
+		this.adress = adress;
+		this.number=number;
 	}
 
 	public Long getId() {
@@ -100,6 +106,25 @@ public class User implements Serializable {
 
 	public void setDate(LocalDate date) {
 		this.date = date;
+	}
+	
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	
+	
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
 	}
 
 	@Override

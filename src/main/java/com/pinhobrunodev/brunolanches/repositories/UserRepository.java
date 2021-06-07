@@ -37,4 +37,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	@Query("SELECT obj FROM User obj WHERE obj.cpf = :cpf AND obj.id <> :id")
 	Optional<User> findByCpfAndId(String cpf, Long id);
 
+	Optional<User> findByAdressAndNumber(String adress, String number);
+
+	@Query("SELECT obj FROM User obj WHERE obj.adress = :adress AND obj.number = :number AND obj.id <> :id")
+	Optional<User> findByAdressAndNumberAndId(String adress, String number, Long id);
+
 }

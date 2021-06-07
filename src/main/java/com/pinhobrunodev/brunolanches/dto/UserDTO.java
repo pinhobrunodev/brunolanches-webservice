@@ -14,18 +14,22 @@ public class UserDTO implements Serializable{
 	private String phone;
 	private String email;
 	private LocalDate date;
+	private String adress;
+	private String number;
 	
 	public UserDTO() {
 		
 	}
 
-	public UserDTO(Long id, String name, String phone, String email, LocalDate date) {
+	public UserDTO(Long id, String name, String phone, String email, LocalDate date,String adress,String number) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
 		this.date = date;
+		this.adress = adress;
+		this.number = number;
 	}
 	
 	// data to be sent to the client-side
@@ -36,6 +40,8 @@ public class UserDTO implements Serializable{
 		phone = entity.getPhone();
 		email = entity.getEmail();
 		date = entity.getDate();
+		number = entity.getNumber();
+		adress = entity.getAdress();
 	}
 
 	public Long getId() {
@@ -76,6 +82,24 @@ public class UserDTO implements Serializable{
 
 	public void setDate(LocalDate date) {
 		this.date = date;
+	}
+	
+	
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
 	}
 
 	@Override

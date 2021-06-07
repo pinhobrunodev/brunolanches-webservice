@@ -18,6 +18,8 @@ public class UserMapper {
 		entity.setPhone(dto.getPhone());
 		entity.setDate(dto.getDate());
 		entity.setCpf(dto.getCpf());
+		entity.setAdress(dto.getAdress());
+		entity.setNumber(dto.getNumber());
 		return entity;
 	}
 	
@@ -29,6 +31,8 @@ public class UserMapper {
 		dto.setEmail(entity.getEmail());
 		dto.setName(entity.getName());
 		dto.setPhone(entity.getPhone());
+		dto.setAdress(entity.getAdress());
+		dto.setNumber(entity.getNumber());
 		return dto;
 	}
 	
