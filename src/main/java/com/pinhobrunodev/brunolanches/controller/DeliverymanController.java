@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.pinhobrunodev.brunolanches.dto.DeliverymanDTO;
 import com.pinhobrunodev.brunolanches.services.DeliverymanService;
 
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 @RestController
 @RequestMapping(value = "/deliverymans")
 public class DeliverymanController {
@@ -25,21 +28,21 @@ public class DeliverymanController {
 	private DeliverymanService service;
 	
 	@PostMapping(consumes =  MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<DeliverymanDTO> insert(DeliverymanDTO dto){
+	public ResponseEntity<DeliverymanDTO> insert(@RequestBody  DeliverymanDTO dto){
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(service.insert(dto));
 	}
-	@PutMapping(consumes =  MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<DeliverymanDTO> update(DeliverymanDTO dto){
+	@PutMapping(value = "/updated",consumes =  MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<DeliverymanDTO> update(@RequestBody DeliverymanDTO dto){
 		return ResponseEntity.ok().body(service.update(dto));
 	}
-	@DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> delete(Long id){
+	@DeleteMapping(value= "/{id}/removed",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Void> delete(@PathVariable Long id){
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<DeliverymanDTO>  findByEmail(String email){
+	@GetMapping(value = "/{email}/found",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<DeliverymanDTO>  findByEmail(@PathVariable String email){
 		return ResponseEntity.ok().body(service.findByEmail(email));
 	}
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
