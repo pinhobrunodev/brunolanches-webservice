@@ -48,7 +48,7 @@
 <details>
       <summary>  Deliveryman Tasks ⌛️</summary>
       
-- [ ] Implement Deliveryman class
+- [X] Implement Deliveryman class
       
 - [ ] Implement DTO
       
