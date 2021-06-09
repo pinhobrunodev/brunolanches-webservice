@@ -65,8 +65,8 @@
     <li> - [X] delete()</li>
       </ul>
 - [X] Implement DeliverymanController
-- [ ] Implement DeliverymanExceptions
-- [ ] Implement Validations in the DeliverymanService class
+- [X] Implement DeliverymanExceptions
+- [X] Implement Validations in the DeliverymanService class
 </details>
 
 
