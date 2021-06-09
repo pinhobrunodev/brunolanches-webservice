@@ -56,13 +56,13 @@
       
 - [X] Implement DeliverymanMapper
       
-- [ ] Implement DeliverymanService
+- [X] Implement DeliverymanService
       <ul>
-    <li> - [ ] findAllOrderByNameASC()</li>
-    <li> - [ ] findByEmail()</li>
-    <li> - [ ] insert()</li>
-    <li> - [ ] update()</li>
-    <li> - [ ] delete()</li>
+    <li> - [X] findAllOrderByNameASC()</li>
+    <li> - [X] findByEmail()</li>
+    <li> - [X] insert()</li>
+    <li> - [X] update()</li>
+    <li> - [X] delete()</li>
       </ul>
 - [ ] Implement DeliverymanController
 - [ ] Implement DeliverymanExceptions
