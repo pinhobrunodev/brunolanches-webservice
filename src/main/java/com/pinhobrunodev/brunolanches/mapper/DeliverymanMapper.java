@@ -11,6 +11,7 @@ public class DeliverymanMapper {
 	
 	public Deliveryman toEntity(DeliverymanDTO dto) {
 		Deliveryman entity = new Deliveryman();
+		entity.setId(dto.getId());
 		entity.setName(dto.getName());
 		entity.setCpf(dto.getCpf());
 		entity.setPhone(dto.getPhone());
