@@ -15,7 +15,7 @@ public class DeliverymanMapper {
 		entity.setName(dto.getName());
 		entity.setCpf(dto.getCpf());
 		entity.setPhone(dto.getPhone());
-		entity.setEmail(dto.getEmail());
+		entity.setEmail(dto.getEmail().substring(0,1).toLowerCase().concat(dto.getEmail().substring(1)));
 		return entity;
 	}
 	

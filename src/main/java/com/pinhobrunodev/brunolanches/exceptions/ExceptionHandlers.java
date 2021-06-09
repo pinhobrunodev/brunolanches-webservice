@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanBusiness;
+import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserBusiness;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserNotFound;
 
@@ -22,4 +24,13 @@ public class ExceptionHandlers extends  ResponseEntityExceptionHandler {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
 	}
 	
+	@ExceptionHandler(ExceptionDeliverymanBusiness.class)
+	protected ResponseEntity<ExceptionResponse> deliverymanAlreadyExistsExceptionBusiness(ExceptionDeliverymanBusiness e){
+		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(new ExceptionResponse(e.getMessage()));
+	}
+	
+	@ExceptionHandler(ExceptionDeliverymanNotFound.class)
+	protected ResponseEntity<ExceptionResponse> deliverymanNotFoundExceptionHandler(ExceptionDeliverymanNotFound e){
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
+	}
 }
