@@ -46,7 +46,7 @@
 </details>
 
 <details>
-      <summary>  Deliveryman Tasks ⌛️</summary>
+      <summary>  Deliveryman Tasks ✅</summary>
       
 - [X] Implement Deliveryman class
       
@@ -67,6 +67,13 @@
 - [X] Implement DeliverymanController
 - [X] Implement DeliverymanExceptions
 - [X] Implement Validations in the DeliverymanService class
+</details>
+
+<details>
+      <summary>  Order ⏳ </summary>
+     
+      (Coming soon... 🛠)
+ 
 </details>
 
 
