@@ -58,7 +58,7 @@
       
 - [ ] Implement DeliverymanService
       <ul>
-    <li> - [ ] findAllOrderByRegisteredDate()</li>
+    <li> - [ ] findAllOrderByNameASC()</li>
     <li> - [ ] findByEmail()</li>
     <li> - [ ] insert()</li>
     <li> - [ ] update()</li>
