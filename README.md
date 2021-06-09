@@ -54,7 +54,7 @@
       
 - [X] Implement DeliverymanRepository
       
-- [ ] Implement DeliverymanMapper
+- [X] Implement DeliverymanMapper
       
 - [ ] Implement DeliverymanService
       <ul>
