@@ -94,7 +94,7 @@
 
 | HTTP VERB 	|       ENPOINT       	| OBJECTIVE                     	|
 |-----------	|:-------------------:	|-------------------------------	|
-| GET       	| /deliverymans              	| List all deliverymans by registered date 	|
+| GET       	| /deliverymans              	| List all deliverymans by name order 	|
 | GET       	| /deliverymans/{email}/found 	| List  deliverymans by  email              	|
 | POST      	| /deliverymans            	| Insert a Deliveryman                	|
 | PUT       	|/deliverymans/updated      	|  Update a deliveryman                  	|
