@@ -50,7 +50,7 @@
       
 - [X] Implement Deliveryman class
       
-- [ ] Implement DTO
+- [X] Implement DTO
       
 - [ ] Implement DeliverymanRepository
       
