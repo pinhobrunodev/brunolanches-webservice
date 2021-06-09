@@ -52,7 +52,7 @@
       
 - [X] Implement DTO
       
-- [ ] Implement DeliverymanRepository
+- [X] Implement DeliverymanRepository
       
 - [ ] Implement DeliverymanMapper
       
