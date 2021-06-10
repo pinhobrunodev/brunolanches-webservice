@@ -71,6 +71,8 @@
 
 <details>
       <summary>  Order ⏳ </summary>
+      
+- [ ] Implement OrderStatus Enumeration     
      
 - [ ] Implement Order classe
       
