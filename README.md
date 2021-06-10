@@ -72,7 +72,26 @@
 <details>
       <summary>  Order ⏳ </summary>
      
-      (Coming soon... 🛠)
+- [ ] Implement Order class
+      
+- [ ] Implement DTO
+      
+- [ ] Implement OrderRepository
+      
+- [ ] Implement OrderMapper
+      
+- [ ] Implement OrderService
+      <ul>
+    <li> - [ ] findAllOrdersByInstantASC()</li>
+    <li> - [ ] findAllOrdersByStatusPENDING()</li>
+    <li> - [ ] findAllOrdersByStatusDELIVERED()</li>
+    <li> - [ ] findById()</li>
+    <li> - [ ] insert()</li>
+    <li> - [ building... 🔨 ] pagedSearch() </li>       
+      </ul>
+- [ ] Implement OrderController
+- [ ] Implement OrderExceptions
+- [ ] Implement Validations in the OrderService class
  
 </details>
 
