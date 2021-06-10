@@ -70,7 +70,7 @@
 </details>
 
 <details>
-      <summary>  Order ⏳ </summary>
+      <summary>  Order ✅ </summary>
       
 - [X] Implement OrderStatus Enumeration     
      
@@ -91,14 +91,14 @@
     <li> - [X] insert()</li>
     <li> - [ building... 🔨 ] pagedSearch() </li>       
       </ul>
-- [ ] Implement OrderController
-- [ ] Implement OrderExceptions
-- [ ] Implement Validations in the OrderService class
+- [X] Implement OrderController
+- [X] Implement OrderExceptions
+- [X] Implement Validations in the OrderService class
  
 </details>
 
 <details>
-      <summary> Relation between classes ↔️ </summary>
+      <summary> Relation between classes ⏳ </summary>
      
 - [ ] Implement relation between ORDER-USER-DELIVERYMAN
 
