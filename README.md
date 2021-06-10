@@ -78,7 +78,7 @@
       
 - [X] Implement DTO
       
-- [ ] Implement OrderRepository
+- [X] Implement OrderRepository
       
 - [ ] Implement OrderMapper
       
