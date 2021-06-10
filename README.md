@@ -76,7 +76,7 @@
      
 - [X] Implement Order classe
       
-- [ ] Implement DTO
+- [X] Implement DTO
       
 - [ ] Implement OrderRepository
       
