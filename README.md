@@ -80,7 +80,7 @@
       
 - [X] Implement OrderRepository
       
-- [ ] Implement OrderMapper
+- [X] Implement OrderMapper
       
 - [ ] Implement OrderService
       <ul>
