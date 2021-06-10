@@ -74,7 +74,7 @@
       
 - [X] Implement OrderStatus Enumeration     
      
-- [ ] Implement Order classe
+- [X] Implement Order classe
       
 - [ ] Implement DTO
       
