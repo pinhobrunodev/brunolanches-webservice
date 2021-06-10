@@ -127,6 +127,14 @@
 | DELETE    	| /deliverymans/{id}/removed  	| Delete a deliveryman by id           	|
 
 
+### Order Class
 
+| HTTP VERB 	|       ENPOINT      	| OBJECTIVE                 	|
+|-----------	|:------------------:	|---------------------------	|
+| GET       	| /orders            	| List all orders by moment 	|
+| GET       	| /orders/pending    	| List all orders pending   	|
+| GET       	| /orders/delivered  	| List all orders delivered 	|
+| GET       	| /orders/{id}/found 	| List order by id          	|
+| POST      	| /orders            	| Insert a order            	|
 
 
