@@ -24,7 +24,7 @@
 <details>
       <summary> User Tasks  ✅</summary>
       
-- [X] Implement User class
+- [X] Implement User classe
       
 - [X] Implement DTO
       
@@ -48,7 +48,7 @@
 <details>
       <summary>  Deliveryman Tasks ✅</summary>
       
-- [X] Implement Deliveryman class
+- [X] Implement Deliveryman classe
       
 - [X] Implement DTO
       
@@ -72,7 +72,7 @@
 <details>
       <summary>  Order ⏳ </summary>
      
-- [ ] Implement Order class
+- [ ] Implement Order classe
       
 - [ ] Implement DTO
       
@@ -95,6 +95,14 @@
  
 </details>
 
+<details>
+      <summary> Relation between classes ↔️ </summary>
+     
+- [ ] Implement relation between ORDER-USER-DELIVERYMAN
+
+
+ 
+</details>
 
 
 
@@ -104,7 +112,7 @@
 # 📌 Project Endpoints
 
 
-### User Class
+### User 
 
 | HTTP VERB 	|       ENPOINT       	| OBJECTIVE                     	|
 |-----------	|:-------------------:	|-------------------------------	|
@@ -116,7 +124,7 @@
 
 
 
-### Deliveryman Class
+### Deliveryman 
 
 | HTTP VERB 	|       ENPOINT       	| OBJECTIVE                     	|
 |-----------	|:-------------------:	|-------------------------------	|
@@ -127,7 +135,7 @@
 | DELETE    	| /deliverymans/{id}/removed  	| Delete a deliveryman by id           	|
 
 
-### Order Class
+### Order
 
 | HTTP VERB 	|       ENPOINT      	| OBJECTIVE                 	|
 |-----------	|:------------------:	|---------------------------	|
