@@ -2,9 +2,12 @@ package com.pinhobrunodev.brunolanches.mapper;
 
 import java.time.Instant;
 
+import org.springframework.stereotype.Component;
+
 import com.pinhobrunodev.brunolanches.dto.OrderDTO;
 import com.pinhobrunodev.brunolanches.entites.Order;
 
+@Component
 public class OrderMapper {
 
 	
@@ -14,7 +17,7 @@ public class OrderMapper {
 		Order entity = new Order();
 		entity.setId(dto.getId());
 		entity.setMoment(Instant.now());
-		entity.setOrderStatus(dto.getOrderStatus().PENDING);
+		entity.setStatus(dto.getStatus().PENDING);
 		return entity;
 	}
 	
@@ -22,7 +25,7 @@ public class OrderMapper {
 		OrderDTO dto = new OrderDTO();
 		dto.setId(entity.getId());
 		dto.setMoment(entity.getMoment());
-		dto.setOrderStatus(entity.getOrderStatus());
+		dto.setStatus(entity.getStatus());
 		return dto;
 	}
 }

@@ -16,7 +16,7 @@ public class OrderDTO implements Serializable {
 	private Long id;
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;	
-	private Integer status;
+	private OrderStatus status;
 	
 	
 	public OrderDTO() {
@@ -26,7 +26,7 @@ public class OrderDTO implements Serializable {
 	public OrderDTO(Order order) {
 		id = order.getId();
 		moment=order.getMoment();
-		setOrderStatus(order.getOrderStatus());
+		status = order.getStatus();
 	}
 
 
@@ -50,15 +50,15 @@ public class OrderDTO implements Serializable {
 		this.moment = moment;
 	}
 
-	public OrderStatus getOrderStatus() {
-		return OrderStatus.valueOf(status);
+	public OrderStatus getStatus() {
+		return status;
 	}
 
-	public void setOrderStatus(OrderStatus status) {
-		if (status != null) {
-			this.status = status.getCode();
-		}
+	public void setStatus(OrderStatus status) {
+		this.status = status;
 	}
+
+
 	
 
 }
