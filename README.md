@@ -85,8 +85,8 @@
 - [ ] Implement OrderService
       <ul>
     <li> - [ ] findAllOrdersByInstantASC()</li>
-    <li> - [ ] findAllOrdersByStatusPENDING()</li>
-    <li> - [ ] findAllOrdersByStatusDELIVERED()</li>
+    <li> - [ ] findAllOrdersByStatusPENDINGOrderByMomentASC()</li>
+    <li> - [ ] findAllOrdersByStatusDELIVEREDOrderByMomentASC()</li>
     <li> - [ ] findById()</li>
     <li> - [ ] insert()</li>
     <li> - [ building... 🔨 ] pagedSearch() </li>       
