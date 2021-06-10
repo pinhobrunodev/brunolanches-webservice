@@ -82,13 +82,13 @@
       
 - [X] Implement OrderMapper
       
-- [ ] Implement OrderService
+- [X] Implement OrderService
       <ul>
-    <li> - [ ] findAllOrdersByInstantASC()</li>
-    <li> - [ ] findAllOrdersByStatusPENDINGOrderByMomentASC()</li>
-    <li> - [ ] findAllOrdersByStatusDELIVEREDOrderByMomentASC()</li>
-    <li> - [ ] findById()</li>
-    <li> - [ ] insert()</li>
+    <li> - [X] findAllOrdersByInstantASC()</li>
+    <li> - [X] findAllOrdersByStatusPENDINGOrderByMomentASC()</li>
+    <li> - [X] findAllOrdersByStatusDELIVEREDOrderByMomentASC()</li>
+    <li> - [X] findById()</li>
+    <li> - [X] insert()</li>
     <li> - [ building... 🔨 ] pagedSearch() </li>       
       </ul>
 - [ ] Implement OrderController
