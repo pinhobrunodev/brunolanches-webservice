@@ -63,11 +63,12 @@
 - [X] Implement DeliverymanService
       <ul>
     <li> - [X] findAllOrderByNameASC()</li>
+    <li> - [X]findAllOrdersByDeliverymanDelivered()</li>
+    <li> - [X]findAllOrdersByDeliverymanPending()</li>
     <li> - [X] findByEmail()</li>
     <li> - [X] insert()</li>
     <li> - [X] update()</li>
     <li> - [X] delete()</li>
-     
 - [X] Implement DeliverymanController
 - [X] Implement DeliverymanExceptions
 - [X] Implement Validations in the DeliverymanService class
