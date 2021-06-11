@@ -107,11 +107,13 @@
       <summary> Relation between classes ✅ </summary>
      
 - [X] Implement relation between ORDER-USER-DELIVERYMAN
-
-
- 
 </details>
 
+<details>
+      <summary> CATEGORY [ building... 🔨 ] </summary>
+     
+
+</details>
 
 
 
