@@ -1,6 +1,8 @@
 # 🎯 About the project
 
-### Project created to exercise my knowledge in REST API development.
+#### Project created to exercise my knowledge in REST API development.
+
+## 🛵🍕 Bruno Lanches is a personal project for a delivery-style food store.
 
 ## 🛠 Technologies used
 
