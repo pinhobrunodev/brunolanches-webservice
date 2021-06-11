@@ -11,6 +11,7 @@ import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliveryma
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderEmptyList;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderStatus;
+import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionEmptyUserList;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserBusiness;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserNotFound;
 
@@ -27,6 +28,11 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
 	}
 
+	@ExceptionHandler(ExceptionEmptyUserList.class)
+	protected ResponseEntity<ExceptionResponse> emptyUserListExceptionHandler(ExceptionEmptyUserList e){
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
+	}
+	
 	@ExceptionHandler(ExceptionDeliverymanBusiness.class)
 	protected ResponseEntity<ExceptionResponse> deliverymanAlreadyExistsExceptionBusiness(
 			ExceptionDeliverymanBusiness e) {

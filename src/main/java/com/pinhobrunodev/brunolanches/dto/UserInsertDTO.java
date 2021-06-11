@@ -18,7 +18,7 @@ public class UserInsertDTO implements Serializable {
 	@JsonFormat(shape = Shape.STRING, pattern = "dd/MM/yyyy")
 	private LocalDate date;
 	private String cpf;
-	private String adress;
+	private String address;
 	private String number;
 
 	public UserInsertDTO() {
@@ -34,7 +34,7 @@ public class UserInsertDTO implements Serializable {
 		this.email = email;
 		this.date = date;
 		this.cpf = cpf;
-		this.adress = adress;
+		this.address = adress;
 		this.number = number;
 	}
 
@@ -47,7 +47,7 @@ public class UserInsertDTO implements Serializable {
 		email = entity.getEmail();
 		date = entity.getDate();
 		cpf = entity.getCpf();
-		adress = entity.getAdress();
+		address = entity.getAddress();
 		number = entity.getNumber();
 	}
 
@@ -100,12 +100,12 @@ public class UserInsertDTO implements Serializable {
 	}
 	
 	
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String adress) {
+		this.address = adress;
 	}
 
 	public String getNumber() {

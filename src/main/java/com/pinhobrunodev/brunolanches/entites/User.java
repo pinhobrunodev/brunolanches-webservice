@@ -2,11 +2,15 @@ package com.pinhobrunodev.brunolanches.entites;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -40,24 +44,28 @@ public class User implements Serializable {
 	@NotNull(message = "Date cannot be null")
 	@JsonFormat(shape = Shape.STRING, pattern = "dd/MM/yyyy")
 	private LocalDate date;
-	@NotNull(message = "Adress cannot be null")
-	private String adress;
+	@NotNull(message = "address cannot be null")
+	private String address;
 	@NotNull(message = "Number of the house cannot be null")
 	private String number;
-	
+
+	@OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
+	private Set<Order> orders = new HashSet<>();
+
 	public User() {
 
 	}
 
-	public User(Long id, String name, String phone, String email, String cpf, LocalDate date,String adress,String number) {
+	public User(Long id, String name, String phone, String email, String cpf, LocalDate date, String address,
+			String number) {
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
 		this.cpf = cpf;
 		this.date = date;
-		this.adress = adress;
-		this.number=number;
+		this.address = address;
+		this.number = number;
 	}
 
 	public Long getId() {
@@ -107,24 +115,25 @@ public class User implements Serializable {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	
-	
 	public String getNumber() {
 		return number;
 	}
 
 	public void setNumber(String number) {
 		this.number = number;
+	}
+
+	public Set<Order> getOrders() {
+		return orders;
 	}
 
 	@Override

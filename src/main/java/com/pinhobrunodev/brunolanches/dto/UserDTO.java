@@ -14,7 +14,7 @@ public class UserDTO implements Serializable{
 	private String phone;
 	private String email;
 	private LocalDate date;
-	private String adress;
+	private String address;
 	private String number;
 	
 	public UserDTO() {
@@ -28,7 +28,7 @@ public class UserDTO implements Serializable{
 		this.phone = phone;
 		this.email = email;
 		this.date = date;
-		this.adress = adress;
+		this.address = adress;
 		this.number = number;
 	}
 	
@@ -41,7 +41,7 @@ public class UserDTO implements Serializable{
 		email = entity.getEmail();
 		date = entity.getDate();
 		number = entity.getNumber();
-		adress = entity.getAdress();
+		address = entity.getAddress();
 	}
 
 	public Long getId() {
@@ -86,12 +86,12 @@ public class UserDTO implements Serializable{
 	
 	
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String adress) {
+		this.address = adress;
 	}
 
 	public String getNumber() {

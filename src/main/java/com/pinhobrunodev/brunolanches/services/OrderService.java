@@ -1,6 +1,7 @@
 package com.pinhobrunodev.brunolanches.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pinhobrunodev.brunolanches.dto.OrderDTO;
+import com.pinhobrunodev.brunolanches.dto.OrderInsertDTO;
 import com.pinhobrunodev.brunolanches.entites.Order;
+import com.pinhobrunodev.brunolanches.entites.User;
+import com.pinhobrunodev.brunolanches.entites.enums.OrderStatus;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderEmptyList;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderStatus;
+import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserNotFound;
 import com.pinhobrunodev.brunolanches.mapper.OrderMapper;
 import com.pinhobrunodev.brunolanches.repositories.OrderRepository;
+import com.pinhobrunodev.brunolanches.repositories.UserRepository;
 import com.pinhobrunodev.brunolanches.utils.OrderMessageUtils;
 
 @Service
@@ -23,12 +29,18 @@ public class OrderService {
 	private OrderRepository repository;
 	@Autowired
 	private OrderMapper mapper;
+	@Autowired
+	private UserRepository userRepository;
 
 	@Transactional
-	public OrderDTO insert(OrderDTO dto) {
+	public OrderDTO insert(OrderInsertDTO dto) {
+		Optional<User> user = userRepository.findById(dto.getUser_id());
+		if (!user.isPresent()) {
+			throw new ExceptionUserNotFound();
+		}
 		Order entity = mapper.toEntity(dto);
 		repository.save(entity);
-		return mapper.toOrderDTO(entity);
+		return new OrderDTO(entity);
 	}
 
 	@Transactional(readOnly = true)
@@ -54,6 +66,19 @@ public class OrderService {
 		}
 		return repository.findAllOrdersByStatusDELIVEREDOrderByMomentASC().stream().map(x -> new OrderDTO(x))
 				.collect(Collectors.toList());
+	}
+
+	@Transactional
+	public OrderDTO setDelivered(Long id) {
+
+		Optional<Order> validation = repository.findById(id);
+		if (!validation.isPresent()) {
+			throw new ExceptionOrderNotFound();
+		}
+		Order order = repository.getOne(id);
+		order.setStatus(OrderStatus.DELIVERED);
+		repository.save(order);
+		return mapper.toOrderDTO(order);
 	}
 
 	@Transactional(readOnly = true)
