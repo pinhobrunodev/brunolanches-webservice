@@ -63,8 +63,8 @@
 - [X] Implement DeliverymanService
       <ul>
     <li> - [X] findAllOrderByNameASC()</li>
-    <li> - [X]findAllOrdersByDeliverymanDelivered()</li>
-    <li> - [X]findAllOrdersByDeliverymanPending()</li>
+    <li> - [X] findAllOrdersByDeliverymanDelivered()</li>
+    <li> - [X] findAllOrdersByDeliverymanPending()</li>
     <li> - [X] findByEmail()</li>
     <li> - [X] insert()</li>
     <li> - [X] update()</li>
