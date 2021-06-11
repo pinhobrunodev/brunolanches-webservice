@@ -106,7 +106,7 @@
 <details>
       <summary> Relation between classes ⏳ </summary>
      
-- [ ] Implement relation between ORDER-USER-DELIVERYMAN
+- [X] Implement relation between ORDER-USER-DELIVERYMAN
 
 
  
@@ -141,6 +141,8 @@
 |-----------	|:-------------------:	|-------------------------------	|
 | GET       	| /deliverymans              	| List all deliverymans by name order 	|
 | GET       	| /deliverymans/{email}/found 	| List  deliverymans by  email              	|
+| GET       	| /deliverymans/orders/{id}/delivered	| Lists all orders delivered from the id referring to the deliveryman             	|
+| GET       	|/deliverymans/orders/{id}/pending	| Lists all orders pending from the id referring to the deliveryman             	|
 | POST      	| /deliverymans            	| Insert a Deliveryman                	|
 | PUT       	|/deliverymans/updated      	|  Update a deliveryman                  	|
 | DELETE    	| /deliverymans/{id}/removed  	| Delete a deliveryman by id           	|
