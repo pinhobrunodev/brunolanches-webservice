@@ -104,7 +104,7 @@
 </details>
 
 <details>
-      <summary> Relation between classes ⏳ </summary>
+      <summary> Relation between classes ✅ </summary>
      
 - [X] Implement relation between ORDER-USER-DELIVERYMAN
 
