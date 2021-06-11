@@ -128,9 +128,9 @@
 | GET       	| /users/{id}/orders 	| List all orders of the user id    |
 | GET       	| /users/{id}/orders/status/pending 	| List all pending orders of the user id            	|
 | GET       	| /users/{id}/orders/status/delivered  	|  List all delivered orders of the user id          	|
-| POST      	| /user               	| Insert a user                 	|
-| PUT       	| /user/updated       	| Update a user                 	|
-| DELETE    	| /user/{id}/removed  	| Delete a user by id           	|
+| POST      	| /users               	| Insert a user                 	|
+| PUT       	| /users/updated       	| Update a user                 	|
+| DELETE    	| /users/{id}/removed  	| Delete a user by id           	|
 
 
 
