@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.pinhobrunodev.brunolanches.dto.DeliverymanDTO;
+import com.pinhobrunodev.brunolanches.dto.DeliverymanInsertDTO;
+import com.pinhobrunodev.brunolanches.dto.DeliverymanOrderDTO;
 import com.pinhobrunodev.brunolanches.services.DeliverymanService;
-
-
 
 @RestController
 @RequestMapping(value = "/deliverymans")
@@ -27,27 +27,41 @@ public class DeliverymanController {
 
 	@Autowired
 	private DeliverymanService service;
-	
-	@PostMapping(consumes =  MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<DeliverymanDTO> insert(@RequestBody  DeliverymanDTO dto){
+
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<DeliverymanDTO> insert(@RequestBody DeliverymanInsertDTO dto) {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(service.insert(dto));
 	}
-	@PutMapping(value = "/updated",consumes =  MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<DeliverymanDTO> update(@RequestBody DeliverymanDTO dto){
+
+	@PutMapping(value = "/updated", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<DeliverymanDTO> update(@RequestBody DeliverymanInsertDTO dto) {
 		return ResponseEntity.ok().body(service.update(dto));
 	}
-	@DeleteMapping(value= "/{id}/removed",produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> delete(@PathVariable Long id){
+
+	@DeleteMapping(value = "/{id}/removed", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	@GetMapping(value = "/{email}/found",produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<DeliverymanDTO>  findByEmail(@PathVariable String email){
+
+	@GetMapping(value = "/{email}/found", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<DeliverymanDTO> findByEmail(@PathVariable String email) {
 		return ResponseEntity.ok().body(service.findByEmail(email));
 	}
+
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<DeliverymanDTO>> findAllOrderByNameASC(){
+	public ResponseEntity<List<DeliverymanDTO>> findAllOrderByNameASC() {
 		return ResponseEntity.ok().body(service.findAllOrderByNameASC());
+	}
+
+	@GetMapping(value = "/orders/{id}/delivered", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<DeliverymanOrderDTO>> findAllOrdersByDeliverymaIdDelivered(@PathVariable Long id) {
+		return ResponseEntity.ok().body(service.findAllOrdersByDeliverymaIdDelivered(id));
+	}
+
+	@GetMapping(value = "/orders/{id}/pending", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<DeliverymanOrderDTO>> findAllOrdersByDeliverymanIdPending(@PathVariable Long id) {
+		return ResponseEntity.ok().body(service.findAllOrdersByDeliverymanIdPending(id));
 	}
 }

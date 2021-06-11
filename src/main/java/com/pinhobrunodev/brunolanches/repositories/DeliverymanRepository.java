@@ -34,5 +34,11 @@ public interface DeliverymanRepository extends JpaRepository<Deliveryman, Long> 
 
 	@Query("SELECT obj FROM Deliveryman obj WHERE obj.phone = :phone AND phone.id <> :id")
 	Optional<Deliveryman> findByPhoneAndId(Long id, String phone);
+	
+	@Query("SELECT DISTINCT obj FROM Deliveryman obj JOIN FETCH obj.orders o WHERE o.status = 0 AND obj.id = :id")
+	List<Deliveryman> findAllOrdersByDeliverymaIdDelivered(Long id);
+	
+	@Query("SELECT DISTINCT obj FROM Deliveryman obj JOIN FETCH obj.orders o WHERE o.status = 1 AND obj.id = :id")
+	List<Deliveryman> findAllOrdersByDeliverymaIdPending(Long id);
 
 }

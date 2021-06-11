@@ -3,13 +3,14 @@ package com.pinhobrunodev.brunolanches.mapper;
 import org.springframework.stereotype.Component;
 
 import com.pinhobrunodev.brunolanches.dto.DeliverymanDTO;
+import com.pinhobrunodev.brunolanches.dto.DeliverymanInsertDTO;
 import com.pinhobrunodev.brunolanches.entites.Deliveryman;
 
 @Component
 public class DeliverymanMapper {
 
 	
-	public Deliveryman toEntity(DeliverymanDTO dto) {
+	public Deliveryman toEntity(DeliverymanInsertDTO dto) {
 		Deliveryman entity = new Deliveryman();
 		entity.setId(dto.getId());
 		entity.setName(dto.getName());

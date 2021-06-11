@@ -32,6 +32,10 @@ public class Order implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 
+	@ManyToOne
+	@JoinColumn(name = "deliveryman_id")
+	private Deliveryman deliveryman;
+	
 	public Order() {
 
 	}
@@ -41,6 +45,16 @@ public class Order implements Serializable {
 		this.id = id;
 		this.moment = moment;
 		this.status = status;
+	}
+
+
+	
+	public Deliveryman getDeliveryman() {
+		return deliveryman;
+	}
+
+	public void setDeliveryman(Deliveryman deliveryman) {
+		this.deliveryman = deliveryman;
 	}
 
 	public User getUser() {

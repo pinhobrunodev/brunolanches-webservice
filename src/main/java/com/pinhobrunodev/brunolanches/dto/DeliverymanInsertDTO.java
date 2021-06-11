@@ -1,49 +1,24 @@
-package com.pinhobrunodev.brunolanches.entites;
+package com.pinhobrunodev.brunolanches.dto;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
+import com.pinhobrunodev.brunolanches.entites.Deliveryman;
 
-import org.hibernate.validator.constraints.br.CPF;
-
-@Entity
-@Table(name = "tb_deliveryman")
-public class Deliveryman implements Serializable {
+public class DeliverymanInsertDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@NotNull(message = "Name cannot be null")
 	private String name;
-	@NotNull(message = "Phone number cannot be null")
 	private String phone;
-	@NotNull(message = "Email cannot be null")
-	@Email
 	private String email;
-	@NotNull(message = "CPF cannot be null")
-	@CPF
 	private String cpf;
-	
-	@OneToMany(mappedBy = "deliveryman",cascade = CascadeType.REMOVE)
-	private Set<Order> orders = new HashSet<>();
 
-	public Deliveryman() {
+	public DeliverymanInsertDTO() {
 
 	}
 
-	public Deliveryman(Long id, String name, String phone, String email, String cpf) {
+	public DeliverymanInsertDTO(Long id, String name, String phone, String email, String cpf) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -52,11 +27,12 @@ public class Deliveryman implements Serializable {
 		this.cpf = cpf;
 	}
 
-	
-	
-	
-	public Set<Order> getOrders() {
-		return orders;
+	public DeliverymanInsertDTO(Deliveryman entity) {
+		id = entity.getId();
+		name = entity.getName();
+		phone = entity.getPhone();
+		email = entity.getEmail();
+		cpf = entity.getCpf();
 	}
 
 	public Long getId() {
@@ -115,7 +91,7 @@ public class Deliveryman implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Deliveryman other = (Deliveryman) obj;
+		DeliverymanInsertDTO other = (DeliverymanInsertDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -123,7 +99,5 @@ public class Deliveryman implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
 }

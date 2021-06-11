@@ -20,6 +20,8 @@ public class OrderDTO implements Serializable {
 	private String client_phone;
 	private String address;
 	private String number;
+	private String deliveryman_name;
+	private String deliveryman_phone;
 
 	public OrderDTO() {
 
@@ -33,7 +35,25 @@ public class OrderDTO implements Serializable {
 		client_phone = order.getUser().getPhone();
 		address = order.getUser().getAddress();
 		number = order.getUser().getNumber();
+		deliveryman_name = order.getDeliveryman().getName();
+		deliveryman_phone = order.getDeliveryman().getPhone();
 
+	}
+
+	public String getDeliveryman_name() {
+		return deliveryman_name;
+	}
+
+	public void setDeliveryman_name(String deliveryman_name) {
+		this.deliveryman_name = deliveryman_name;
+	}
+
+	public String getDeliveryman_phone() {
+		return deliveryman_phone;
+	}
+
+	public void setDeliveryman_phone(String deliveryman_phone) {
+		this.deliveryman_phone = deliveryman_phone;
 	}
 
 	public Long getId() {

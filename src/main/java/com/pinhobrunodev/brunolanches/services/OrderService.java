@@ -10,14 +10,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pinhobrunodev.brunolanches.dto.OrderDTO;
 import com.pinhobrunodev.brunolanches.dto.OrderInsertDTO;
+import com.pinhobrunodev.brunolanches.entites.Deliveryman;
 import com.pinhobrunodev.brunolanches.entites.Order;
 import com.pinhobrunodev.brunolanches.entites.User;
 import com.pinhobrunodev.brunolanches.entites.enums.OrderStatus;
+import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderEmptyList;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderStatus;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserNotFound;
 import com.pinhobrunodev.brunolanches.mapper.OrderMapper;
+import com.pinhobrunodev.brunolanches.repositories.DeliverymanRepository;
 import com.pinhobrunodev.brunolanches.repositories.OrderRepository;
 import com.pinhobrunodev.brunolanches.repositories.UserRepository;
 import com.pinhobrunodev.brunolanches.utils.OrderMessageUtils;
@@ -31,12 +34,18 @@ public class OrderService {
 	private OrderMapper mapper;
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private DeliverymanRepository deliverymanRepository;
 
 	@Transactional
 	public OrderDTO insert(OrderInsertDTO dto) {
 		Optional<User> user = userRepository.findById(dto.getUser_id());
+		Optional<Deliveryman> deliveryman = deliverymanRepository.findById(dto.getDeliveryman_id());
 		if (!user.isPresent()) {
 			throw new ExceptionUserNotFound();
+		}
+		if(!deliveryman.isPresent()) {
+			throw new ExceptionDeliverymanNotFound();
 		}
 		Order entity = mapper.toEntity(dto);
 		repository.save(entity);
