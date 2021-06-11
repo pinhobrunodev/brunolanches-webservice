@@ -39,6 +39,11 @@
     <li> - [X] insert()</li>
     <li> - [X] update()</li>
     <li> - [X] delete()</li>
+    <li> - [X] findAllOrdersByUserId()</li>
+    <li> - [X] findAllOrderByUserIdStatusPending()</li>
+    <li> - [X] findAllOrderByUserIdStatusDelivered()</li>
+            
+            
       </ul>
 - [X] Implement UserController
 - [X] Implement UserExceptions
@@ -89,6 +94,7 @@
     <li> - [X] findAllOrdersByStatusDELIVEREDOrderByMomentASC()</li>
     <li> - [X] findById()</li>
     <li> - [X] insert()</li>
+    <li> - [X] setDelivered() </li>
     <li> - [ building... 🔨 ] pagedSearch() </li>       
       </ul>
 - [X] Implement OrderController
@@ -120,6 +126,9 @@
 |-----------	|:-------------------:	|-------------------------------	|
 | GET       	| /users              	| List all users by birth order 	|
 | GET       	| /users/{name}/found 	| List user by name             	|
+| GET       	| /users/{id}/orders 	| List all orders of the user id    |
+| GET       	| /users/{id}/orders/status/pending 	| List all pending orders of the user id            	|
+| GET       	| /users/{id}/orders/status/delivered  	|  List all delivered orders of the user id          	|
 | POST      	| /user               	| Insert a user                 	|
 | PUT       	| /user/updated       	| Update a user                 	|
 | DELETE    	| /user/{id}/removed  	| Delete a user by id           	|
@@ -146,5 +155,6 @@
 | GET       	| /orders/delivered  	| List all orders delivered 	|
 | GET       	| /orders/{id}/found 	| List order by id          	|
 | POST      	| /orders            	| Insert a order            	|
+| PUT      	| /orders/set/{id}/delivered            	| Update a order status to delivered             	|
 
 
