@@ -68,7 +68,7 @@
     <li> - [X] insert()</li>
     <li> - [X] update()</li>
     <li> - [X] delete()</li>
-      </ul>
+     
 - [X] Implement DeliverymanController
 - [X] Implement DeliverymanExceptions
 - [X] Implement Validations in the DeliverymanService class
