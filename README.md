@@ -42,9 +42,8 @@
     <li> - [X] findAllOrdersByUserId()</li>
     <li> - [X] findAllOrderByUserIdStatusPending()</li>
     <li> - [X] findAllOrderByUserIdStatusDelivered()</li>
-            
-            
-      </ul>
+      </ul>      
+  
 - [X] Implement UserController
 - [X] Implement UserExceptions
 - [X] Implement Validations in the UserService class
