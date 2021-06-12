@@ -188,5 +188,16 @@
 | GET       	| /orders/{id}/found 	| List order by id          	|
 | POST      	| /orders            	| Insert a order            	|
 | PUT      	| /orders/set/{id}/delivered            	| Update a order status to delivered             	|
+      
+      
+
+### Category
+      
+| HTTP VERB 	|       ENPOINT      	| OBJECTIVE             	|
+|-----------	|:------------------:	|-----------------------	|
+| GET       	| /categories        	| List all categories   	|
+| GET       	| /categories/{id}   	| List category by id   	|
+| GET       	| /categories/{name} 	| List category by name 	|
+      
 
 
