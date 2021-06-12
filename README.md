@@ -128,8 +128,6 @@
       
 - [ ] Implement CategoryRepository
       
-- [ ] Implement CategoryMapper
-      
 - [ ] Implement CategoryService
       <ul>
     <li> - [ ] findAllCategories()</li> 
