@@ -107,15 +107,43 @@
 
 <details>
       <summary> Relation between classes ✅ </summary>
-     
-- [X] Implement relation between ORDER-USER-DELIVERYMAN
+     <ul>
+           <li>- [X] Implement relation between ORDER-USER-DELIVERYMAN</li>
+      </ul>
 </details>
-
+      
+      
 <details>
-      <summary> CATEGORY [ building... 🔨 ] </summary>
-     
-
+      <summary>  Category task ✅ </summary>
+      
+      
+      
+ - [ ] Implement Category classe
+      
+- [ ] Implement Category Enumeration  
+      
+- [ ] Implement Seed Category SQL
+      
+- [ ] Implement DTO
+      
+- [ ] Implement CategoryRepository
+      
+- [ ] Implement CategoryMapper
+      
+- [ ] Implement CategoryService
+      <ul>
+    <li> - [ ] findAllCategories()</li> 
+         <li> - [ ] findCategoryById()</li>
+            <li> - [ ] findCategortByName()</li>
+      </ul>
+- [X] Implement CategoryController
+- [X] Implement CategoryExceptions
+- [X] Implement Validations in the CategoryService class
+ 
 </details>
+
+      
+      
 
 
 
