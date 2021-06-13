@@ -164,6 +164,10 @@
 # 📌 Project Endpoints
 
 
+      http://localhost:8080[Insert the Endpoint below]
+      
+      
+      
 ### User 
 
 | HTTP VERB 	|       ENPOINT       	| OBJECTIVE                     	|
