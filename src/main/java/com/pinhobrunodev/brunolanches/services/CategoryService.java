@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pinhobrunodev.brunolanches.dto.CategoryDTO;
+import com.pinhobrunodev.brunolanches.entites.Category;
+import com.pinhobrunodev.brunolanches.exceptions.ExceptionCategoryNotFound;
 import com.pinhobrunodev.brunolanches.repositories.CategoryRepository;
 
 @Service
@@ -22,11 +24,15 @@ public class CategoryService {
 	}
 	@Transactional(readOnly = true)
 	public CategoryDTO findCategoryById(Long id) {
-		return repository.findById(id).map(x->new CategoryDTO(x)).orElseThrow(IllegalArgumentException::new);
+		return repository.findById(id).map(x->new CategoryDTO(x)).orElseThrow(ExceptionCategoryNotFound::new);
 	}
 	@Transactional(readOnly = true)
-	public CategoryDTO findCategortByName(String name) {
-		return new CategoryDTO(repository.findByName(name));
+	public CategoryDTO findCategoryByName(String name) {
+		Category validation = repository.findByName(name.toUpperCase());
+		if(validation == null) {
+			throw new ExceptionCategoryNotFound();
+		}
+		return new CategoryDTO(repository.findByName(name.toUpperCase()));
 	}
 	
 	

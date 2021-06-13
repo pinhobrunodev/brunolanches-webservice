@@ -61,7 +61,12 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
 	}
 	
 	@ExceptionHandler(ExceptionOrderStatus.class)
-	protected ResponseEntity<ExceptionResponse> orderStatusExceptionResponse (ExceptionOrderStatus e){
+	protected ResponseEntity<ExceptionResponse> orderStatusExceptionHandler (ExceptionOrderStatus e){
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
+	}
+	
+	@ExceptionHandler(ExceptionCategoryNotFound.class)
+	protected ResponseEntity<ExceptionResponse> categoryNotFoundExceptionHandler(ExceptionCategoryNotFound e){
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
 	}
 }
