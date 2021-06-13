@@ -118,7 +118,7 @@
       
       
       
- - [ ] Implement Category classe
+ - [X] Implement Category classe
       
 - [ ] Implement Seed Category SQL
       
