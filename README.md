@@ -120,7 +120,7 @@
       
  - [X] Implement Category classe
       
-- [ ] Implement Seed Category SQL
+- [X] Implement Seed Category SQL
       
 - [ ] Implement DTO
       
