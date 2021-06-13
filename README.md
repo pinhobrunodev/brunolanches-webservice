@@ -120,8 +120,6 @@
       
  - [ ] Implement Category classe
       
-- [ ] Implement Category Enumeration  
-      
 - [ ] Implement Seed Category SQL
       
 - [ ] Implement DTO
