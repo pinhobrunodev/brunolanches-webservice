@@ -142,9 +142,29 @@
       
  <details>
       <summary> Implement class Product ⏳  </summary>
-     <ul>
-           <li>- 🔨  Building ... </li>
+       
+- [ ] Implement Product classe
+      
+- [ ] Implement Seed Product SQL
+      
+- [ ] Implement DTO
+       
+- [ ] Implement ProductMapper
+      
+- [ ] Implement ProductRepository
+      
+- [ ] Implement ProductService
+      <ul>
+     <li> - [ ] findAllProducts()</li> 
+     <li> - [ ] findProductByName()</li>
+     <li> - [ ] findProductById()</li>
+     <li> - [ ] insert() </li>
+     <li> - [ ] update() </li>
+     <li> - [ ] delete() </li>
       </ul>
+- [ ] Implement ProductController
+- [ ] Implement ProductExceptions
+- [ ] Implement Validations in the ProductService class
 </details>
       
 <details>
@@ -217,5 +237,16 @@
 | GET       	| /categories/findBy/{id}   	| List category by id   	|
 | GET       	| /categories/{name} 	| List category by name 	|
       
+      
+      
+### Product
+| HTTP VERB 	|        ENPOINT        	| OBJECTIVE              	|
+|-----------	|:---------------------:	|------------------------	|
+| GET       	| /products             	| List all products      	|
+| GET       	| /products/search/{id} 	| List a product by id   	|
+| GET       	| /products/find/{name} 	| List a product by name 	|
+| POST      	| /products             	| Save a product         	|
+| PUT       	| /products/update      	| Update a product       	|
+| DELETE    	| /products/delete/{id} 	| Delete a product by id 	|
 
 
