@@ -131,8 +131,8 @@
     <li> - [X] findAllCategories()</li> 
          <li> - [X] findCategoryById()</li>
             <li> - [X] findCategortByName()</li>
-            <li> - [ ] findAllProductsByCategoryId() </li>
-             <li> - [ ] findAllProductsByCategoryName() </li>
+            <li> - [ ⏳ ] findAllProductsByCategoryId() </li>
+             <li> - [  ⏳ ] findAllProductsByCategoryName() </li>
       </ul>
 - [X] Implement CategoryController
 - [X] Implement CategoryExceptions
