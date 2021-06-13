@@ -124,7 +124,7 @@
       
 - [X] Implement DTO
       
-- [ ] Implement CategoryRepository
+- [X] Implement CategoryRepository
       
 - [ ] Implement CategoryService
       <ul>
