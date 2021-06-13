@@ -114,7 +114,7 @@
       
       
 <details>
-      <summary>  Category task ✅ </summary>
+      <summary>  Category task 11/13 =  ✅ 2  = ⏳ </summary>
       
       
       
@@ -131,11 +131,27 @@
     <li> - [X] findAllCategories()</li> 
          <li> - [X] findCategoryById()</li>
             <li> - [X] findCategortByName()</li>
+            <li> - [ ] findAllProductsByCategoryId() </li>
+             <li> - [ ] findAllProductsByCategoryName() </li>
       </ul>
 - [X] Implement CategoryController
 - [X] Implement CategoryExceptions
 - [X] Implement Validations in the CategoryService class
  
+</details>
+      
+ <details>
+      <summary> Implement class Product ⏳  </summary>
+     <ul>
+           <li>- 🔨  Building ... </li>
+      </ul>
+</details>
+      
+<details>
+      <summary> Relation between Product and Category ⏳ </summary>
+     <ul>
+           <li>- [ ] Implement relation between Product and Category </li>
+      </ul>
 </details>
 
       
