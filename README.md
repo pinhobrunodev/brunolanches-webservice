@@ -210,7 +210,7 @@
 | HTTP VERB 	|       ENPOINT      	| OBJECTIVE             	|
 |-----------	|:------------------:	|-----------------------	|
 | GET       	| /categories        	| List all categories   	|
-| GET       	| /categories/{id}   	| List category by id   	|
+| GET       	| /categories/findBy/{id}   	| List category by id   	|
 | GET       	| /categories/{name} 	| List category by name 	|
       
 
