@@ -114,7 +114,7 @@
       
       
 <details>
-      <summary>  Category task ⏳ </summary>
+      <summary>  Category task ✅ </summary>
       
       
       
@@ -132,9 +132,9 @@
          <li> - [X] findCategoryById()</li>
             <li> - [X] findCategortByName()</li>
       </ul>
-- [ ] Implement CategoryController
-- [ ] Implement CategoryExceptions
-- [ ] Implement Validations in the CategoryService class
+- [X] Implement CategoryController
+- [X] Implement CategoryExceptions
+- [X] Implement Validations in the CategoryService class
  
 </details>
 
