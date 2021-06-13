@@ -14,6 +14,7 @@ import com.pinhobrunodev.brunolanches.dto.DeliverymanOrderDTO;
 import com.pinhobrunodev.brunolanches.entites.Deliveryman;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanBusiness;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanNotFound;
+import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionEmptyDeliverymanList;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionEmptyDeliverymanOrderList;
 import com.pinhobrunodev.brunolanches.mapper.DeliverymanMapper;
 import com.pinhobrunodev.brunolanches.repositories.DeliverymanRepository;
@@ -90,8 +91,12 @@ public class DeliverymanService {
 	}
 
 	@Transactional(readOnly = true)
-	public List<DeliverymanDTO> findAllOrderByNameASC() {
-		return repository.findAllOrderByNameASC().stream().map(x -> new DeliverymanDTO(x))
+	public List<DeliverymanDTO> findAllDeliverymanByNameASC() {
+		List<Deliveryman> list = repository.findAllDeliverymanByNameASC();
+		if(list.isEmpty()) {
+			throw new ExceptionEmptyDeliverymanList();
+		}
+		return repository.findAllDeliverymanByNameASC().stream().map(x -> new DeliverymanDTO(x))
 				.collect(Collectors.toList());
 	}
 

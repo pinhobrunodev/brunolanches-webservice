@@ -13,7 +13,7 @@ import com.pinhobrunodev.brunolanches.entites.Deliveryman;
 public interface DeliverymanRepository extends JpaRepository<Deliveryman, Long> {
 
 	@Query("SELECT obj FROM Deliveryman  obj ORDER BY obj.name ASC")
-	List<Deliveryman> findAllOrderByNameASC();
+	List<Deliveryman> findAllDeliverymanByNameASC();
 
 	Optional<Deliveryman> findByEmail(String email);
 

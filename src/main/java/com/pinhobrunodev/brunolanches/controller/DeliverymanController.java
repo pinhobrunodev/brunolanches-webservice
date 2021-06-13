@@ -51,8 +51,8 @@ public class DeliverymanController {
 	}
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<DeliverymanDTO>> findAllOrderByNameASC() {
-		return ResponseEntity.ok().body(service.findAllOrderByNameASC());
+	public ResponseEntity<List<DeliverymanDTO>> findAllDeliverymanByNameASC() {
+		return ResponseEntity.ok().body(service.findAllDeliverymanByNameASC());
 	}
 
 	@GetMapping(value = "/orders/{id}/delivered", produces = MediaType.APPLICATION_JSON_VALUE)

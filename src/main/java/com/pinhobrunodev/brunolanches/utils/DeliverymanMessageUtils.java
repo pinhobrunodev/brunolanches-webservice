@@ -9,6 +9,8 @@ public abstract class DeliverymanMessageUtils {
 	public static final String  PHONE_ALREADY_IN_USE = "ERROR: This Phone is already being used by a deliveryman";
 	public static final String EMPTY_DELIVERED_ORDERS_LIST= "List of orders delivered is empty";
 	public static final String EMPTY_PENDING_ORDERS_LIST= "List of orders pending is empty";
+	public static final String EMPTY_DELIVERYMAN_LIST= "List of Deliverymans  is empty";
+	
 	
 	
 }

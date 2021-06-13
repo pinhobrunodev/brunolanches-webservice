@@ -9,6 +9,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.pinhobrunodev.brunolanches.exceptions.category.ExceptionCategoryNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanBusiness;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanNotFound;
+import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionEmptyDeliverymanList;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionEmptyDeliverymanOrderList;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderEmptyList;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderNotFound;
@@ -41,6 +42,10 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
 		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(new ExceptionResponse(e.getMessage()));
 	}
 
+	@ExceptionHandler(ExceptionEmptyDeliverymanList.class)
+	protected ResponseEntity<ExceptionResponse> emptyDeliverymanListExceptionHandler(ExceptionEmptyDeliverymanList e){
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
+	}
 	@ExceptionHandler(ExceptionDeliverymanNotFound.class)
 	protected ResponseEntity<ExceptionResponse> deliverymanNotFoundExceptionHandler(ExceptionDeliverymanNotFound e) {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
