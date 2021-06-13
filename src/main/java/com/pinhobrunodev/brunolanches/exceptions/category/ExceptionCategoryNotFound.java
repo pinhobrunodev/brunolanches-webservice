@@ -1,4 +1,4 @@
-package com.pinhobrunodev.brunolanches.exceptions;
+package com.pinhobrunodev.brunolanches.exceptions.category;
 
 import com.pinhobrunodev.brunolanches.utils.CategoryMessageUtils;
 

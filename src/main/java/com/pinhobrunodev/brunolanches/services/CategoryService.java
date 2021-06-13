@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pinhobrunodev.brunolanches.dto.CategoryDTO;
 import com.pinhobrunodev.brunolanches.entites.Category;
-import com.pinhobrunodev.brunolanches.exceptions.ExceptionCategoryNotFound;
+import com.pinhobrunodev.brunolanches.exceptions.category.ExceptionCategoryNotFound;
 import com.pinhobrunodev.brunolanches.repositories.CategoryRepository;
 
 @Service

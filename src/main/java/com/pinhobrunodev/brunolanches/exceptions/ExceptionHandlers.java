@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.pinhobrunodev.brunolanches.exceptions.category.ExceptionCategoryNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanBusiness;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionEmptyDeliverymanOrderList;
