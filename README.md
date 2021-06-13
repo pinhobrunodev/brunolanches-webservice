@@ -122,7 +122,7 @@
       
 - [X] Implement Seed Category SQL
       
-- [ ] Implement DTO
+- [X] Implement DTO
       
 - [ ] Implement CategoryRepository
       
