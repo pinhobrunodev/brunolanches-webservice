@@ -126,15 +126,15 @@
       
 - [X] Implement CategoryRepository
       
-- [ ] Implement CategoryService
+- [X] Implement CategoryService
       <ul>
-    <li> - [ ] findAllCategories()</li> 
-         <li> - [ ] findCategoryById()</li>
-            <li> - [ ] findCategortByName()</li>
+    <li> - [X] findAllCategories()</li> 
+         <li> - [X] findCategoryById()</li>
+            <li> - [X] findCategortByName()</li>
       </ul>
-- [X] Implement CategoryController
-- [X] Implement CategoryExceptions
-- [X] Implement Validations in the CategoryService class
+- [ ] Implement CategoryController
+- [ ] Implement CategoryExceptions
+- [ ] Implement Validations in the CategoryService class
  
 </details>
 
