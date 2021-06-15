@@ -151,7 +151,7 @@
        
 - [X] Implement ProductMapper
       
-- [ ] Implement ProductRepository
+- [X] Implement ProductRepository
       
 - [ ] Implement ProductService
       <ul>
