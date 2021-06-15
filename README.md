@@ -147,7 +147,7 @@
       
 - [X] Implement Seed Product SQL
       
-- [ ] Implement DTO
+- [X] Implement DTO
        
 - [ ] Implement ProductMapper
       
