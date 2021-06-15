@@ -143,7 +143,7 @@
  <details>
       <summary> Implement class Product ⏳  </summary>
        
-- [ ] Implement Product classe
+- [X] Implement Product classe
       
 - [ ] Implement Seed Product SQL
       
