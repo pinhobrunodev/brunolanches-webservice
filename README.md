@@ -145,7 +145,7 @@
        
 - [X] Implement Product classe
       
-- [ ] Implement Seed Product SQL
+- [X] Implement Seed Product SQL
       
 - [ ] Implement DTO
        
