@@ -149,7 +149,7 @@
       
 - [X] Implement DTO
        
-- [ ] Implement ProductMapper
+- [X] Implement ProductMapper
       
 - [ ] Implement ProductRepository
       
