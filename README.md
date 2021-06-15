@@ -153,14 +153,14 @@
       
 - [X] Implement ProductRepository
       
-- [ ] Implement ProductService
+- [X] Implement ProductService
       <ul>
-     <li> - [ ] findAllProducts()</li> 
-     <li> - [ ] findProductByName()</li>
-     <li> - [ ] findProductById()</li>
-     <li> - [ ] insert() </li>
-     <li> - [ ] update() </li>
-     <li> - [ ] delete() </li>
+     <li> - [X] findAllProducts()</li> 
+     <li> - [X] findProductByName()</li>
+     <li> - [X] findProductById()</li>
+     <li> - [X] insert() </li>
+     <li> - [X] update() </li>
+     <li> - [X] delete() </li>
       </ul>
 - [ ] Implement ProductController
 - [ ] Implement ProductExceptions
