@@ -162,9 +162,9 @@
      <li> - [X] update() </li>
      <li> - [X] delete() </li>
       </ul>
-- [ ] Implement ProductController
-- [ ] Implement ProductExceptions
-- [ ] Implement Validations in the ProductService class
+- [X] Implement ProductController
+- [X] Implement ProductExceptions
+- [X] Implement Validations in the ProductService class
 </details>
       
 <details>
