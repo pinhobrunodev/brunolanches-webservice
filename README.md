@@ -243,8 +243,8 @@
 | HTTP VERB 	|        ENPOINT        	| OBJECTIVE              	|
 |-----------	|:---------------------:	|------------------------	|
 | GET       	| /products             	| List all products      	|
-| GET       	| /products/search/{id} 	| List a product by id   	|
-| GET       	| /products/find/{name} 	| List a product by name 	|
+| GET       	| /products/id/{id} 	| List a product by id   	|
+| GET       	| /products/name/{name} 	| List a product by name 	|
 | POST      	| /products             	| Save a product         	|
 | PUT       	| /products/update      	| Update a product       	|
 | DELETE    	| /products/delete/{id} 	| Delete a product by id 	|
