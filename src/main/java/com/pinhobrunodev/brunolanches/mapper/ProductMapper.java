@@ -13,8 +13,8 @@ public class ProductMapper {
 	public Product toEntity(ProductInsertDTO dto) {
 		Product entity = new Product();
 		entity.setId(dto.getId());
-		entity.setDescription(dto.getDescription());
-		entity.setName(dto.getName());
+		entity.setDescription(dto.getDescription().toUpperCase());
+		entity.setName(dto.getName().toUpperCase());
 		entity.setPrice(dto.getPrice());
 		return entity;
 	}

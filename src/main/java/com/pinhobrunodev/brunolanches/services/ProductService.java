@@ -1,6 +1,7 @@
 package com.pinhobrunodev.brunolanches.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pinhobrunodev.brunolanches.dto.ProductDTO;
 import com.pinhobrunodev.brunolanches.dto.ProductInsertDTO;
 import com.pinhobrunodev.brunolanches.entites.Product;
+import com.pinhobrunodev.brunolanches.exceptions.product.ExceptionProductBusiness;
+import com.pinhobrunodev.brunolanches.exceptions.product.ExceptionProductNotFound;
 import com.pinhobrunodev.brunolanches.mapper.ProductMapper;
 import com.pinhobrunodev.brunolanches.repositories.ProductRepository;
+import com.pinhobrunodev.brunolanches.utils.ProductMessageUtils;
 
 @Service
 public class ProductService {
@@ -20,27 +24,54 @@ public class ProductService {
 	private ProductRepository repository;
 	@Autowired
 	private ProductMapper mapper;
-	
+
 	@Transactional
-	public ProductDTO insert (ProductInsertDTO dto) {
-		Product entity = mapper.toEntity(dto);
-		repository.save(entity);
-		return mapper.toProductDTO(entity);
-	}
-	
-	@Transactional
-	public ProductDTO update (ProductInsertDTO dto) {
+	public ProductDTO insert(ProductInsertDTO dto) {
+		Optional<Product> validationInsert = repository.findByNameAndDescriptionAndPrice(dto.getName(),
+				dto.getDescription(), dto.getPrice());
+		Optional<Product> validationInsertNameAndDescription = repository.findByNameAndDescription(dto.getName(),
+				dto.getDescription());
+		if (dto.getPrice() <= 0) {
+			throw new ExceptionProductBusiness(ProductMessageUtils.INVALID_PRICE);
+		}
+		if (validationInsert.isPresent()) {
+			throw new ExceptionProductBusiness(ProductMessageUtils.PRODUCT_ALREADY_EXISTS);
+		}
+		if (validationInsertNameAndDescription.isPresent()) {
+			throw new ExceptionProductBusiness(ProductMessageUtils.PRODUCT_ALREADY_EXISTS);
+		}
+		Product aux = repository.findByName(dto.getName());
+		if (aux != null) {
+			throw new ExceptionProductBusiness(ProductMessageUtils.PRODUCT_ALREADY_EXISTS);
+		}
 		Product entity = mapper.toEntity(dto);
 		repository.save(entity);
 		return mapper.toProductDTO(entity);
 	}
 
-	
 	@Transactional
-	public void delete (Long id) {
-	repository.deleteById(id);
+	public ProductDTO update(ProductInsertDTO dto) {
+		Optional<Product> validationInsertUpdate = repository.findByProductAndUpdate(dto.getId(), dto.getDescription(),
+				dto.getName());
+		if (dto.getPrice() <= 0) {
+			throw new ExceptionProductBusiness(ProductMessageUtils.INVALID_PRICE);
+		}
+		if (validationInsertUpdate.isPresent()) {
+			throw new ExceptionProductBusiness(ProductMessageUtils.PRODUCT_ALREADY_EXISTS);
+		}
+		Product entity = mapper.toEntity(dto);
+		repository.save(entity);
+		return mapper.toProductDTO(entity);
 	}
 
+	@Transactional
+	public void delete(Long id) {
+		Optional<Product> aux = repository.findById(id);
+		if (!aux.isPresent()) {
+			throw new ExceptionProductNotFound();
+		}
+		repository.deleteById(id);
+	}
 
 	@Transactional(readOnly = true)
 	public List<ProductDTO> findAllProducts() {
@@ -49,12 +80,17 @@ public class ProductService {
 
 	@Transactional(readOnly = true)
 	public ProductDTO findProductByName(String name) {
-		return new ProductDTO(repository.findByName(name));
+
+		Product aux = repository.findByName(name.toUpperCase());
+		if (aux == null) {
+			throw new ExceptionProductNotFound();
+		}
+		return new ProductDTO(repository.findByName(name.toUpperCase()));
 
 	}
 
 	@Transactional(readOnly = true)
 	public ProductDTO findProductById(Long id) {
-		return repository.findById(id).map(x -> new ProductDTO(x)).orElseThrow(IllegalArgumentException::new);
+		return repository.findById(id).map(x -> new ProductDTO(x)).orElseThrow(ExceptionProductNotFound::new);
 	}
 }

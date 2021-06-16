@@ -14,6 +14,8 @@ import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionEmptyDeliv
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderEmptyList;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.order.ExceptionOrderStatus;
+import com.pinhobrunodev.brunolanches.exceptions.product.ExceptionProductBusiness;
+import com.pinhobrunodev.brunolanches.exceptions.product.ExceptionProductNotFound;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionEmptyUserList;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserBusiness;
 import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserNotFound;
@@ -73,6 +75,15 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
 	
 	@ExceptionHandler(ExceptionCategoryNotFound.class)
 	protected ResponseEntity<ExceptionResponse> categoryNotFoundExceptionHandler(ExceptionCategoryNotFound e){
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
+	}
+	
+	@ExceptionHandler(ExceptionProductBusiness.class)
+	protected ResponseEntity<ExceptionResponse> productBusinessExceptionHandler(ExceptionProductBusiness e){
+		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(new ExceptionResponse(e.getMessage()));
+	}
+	@ExceptionHandler(ExceptionProductNotFound.class)
+	protected ResponseEntity<ExceptionResponse> productNotFoundExceptionHandler(ExceptionProductNotFound e){
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(e.getMessage()));
 	}
 }
