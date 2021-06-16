@@ -27,10 +27,10 @@ public class ProductService {
 
 	@Transactional
 	public ProductDTO insert(ProductInsertDTO dto) {
-		Optional<Product> validationInsert = repository.findByNameAndDescriptionAndPrice(dto.getName(),
-				dto.getDescription(), dto.getPrice());
-		Optional<Product> validationInsertNameAndDescription = repository.findByNameAndDescription(dto.getName(),
-				dto.getDescription());
+		Optional<Product> validationInsert = repository.findByNameAndDescriptionAndPrice(dto.getName().toUpperCase(),
+				dto.getDescription().toUpperCase(), dto.getPrice());
+		Optional<Product> validationInsertNameAndDescription = repository.findByNameAndDescription(dto.getName().toUpperCase(),
+				dto.getDescription().toUpperCase());
 		if (dto.getPrice() <= 0) {
 			throw new ExceptionProductBusiness(ProductMessageUtils.INVALID_PRICE);
 		}
@@ -40,7 +40,7 @@ public class ProductService {
 		if (validationInsertNameAndDescription.isPresent()) {
 			throw new ExceptionProductBusiness(ProductMessageUtils.PRODUCT_ALREADY_EXISTS);
 		}
-		Product aux = repository.findByName(dto.getName());
+		Product aux = repository.findByName(dto.getName().toUpperCase());
 		if (aux != null) {
 			throw new ExceptionProductBusiness(ProductMessageUtils.PRODUCT_ALREADY_EXISTS);
 		}
@@ -53,6 +53,10 @@ public class ProductService {
 	public ProductDTO update(ProductInsertDTO dto) {
 		Optional<Product> validationInsertUpdate = repository.findByProductAndUpdate(dto.getId(), dto.getDescription(),
 				dto.getName());
+		Optional<Product> validationInsertNameUpdate = repository.findByNameAndId(dto.getName(),dto.getId());
+		if(validationInsertNameUpdate.isPresent()) {
+			throw new ExceptionProductBusiness(ProductMessageUtils.PRODUCT_ALREADY_EXISTS);
+		}
 		if (dto.getPrice() <= 0) {
 			throw new ExceptionProductBusiness(ProductMessageUtils.INVALID_PRICE);
 		}
@@ -66,8 +70,8 @@ public class ProductService {
 
 	@Transactional
 	public void delete(Long id) {
-		Optional<Product> aux = repository.findById(id);
-		if (!aux.isPresent()) {
+		Optional<Product> validationIdForDelete = repository.findById(id);
+		if (!validationIdForDelete.isPresent()) {
 			throw new ExceptionProductNotFound();
 		}
 		repository.deleteById(id);

@@ -33,7 +33,7 @@ public class ProductController {
 		return ResponseEntity.created(uri).body(service.insert(dto));
 	}
 
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/update",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ProductDTO> update(@RequestBody ProductInsertDTO dto) {
 		return ResponseEntity.ok().body(service.update(dto));
 

@@ -19,5 +19,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
 	@Query("SELECT obj FROM Product obj WHERE obj.description = :description AND obj.name = :name AND obj.id <> :id")
 	Optional<Product> findByProductAndUpdate(Long id, String description, String name);
+	
+	@Query("SELECT obj FROM Product obj WHERE obj.name = :name AND obj.id <> :id")
+	Optional<Product> findByNameAndId(String name, Long id);
 
 }
