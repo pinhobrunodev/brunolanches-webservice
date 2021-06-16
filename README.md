@@ -264,7 +264,7 @@
       
  #
       
-<p align="center">Feito com <g-emoji class="g-emoji" alias="green_heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f49a.png">💚</g-emoji> by Bruno Pinho</p>
+<p align="center">Made by <g-emoji class="g-emoji" alias="green_heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f49a.png">💚</g-emoji> by Bruno Pinho</p>
       
  #
 
