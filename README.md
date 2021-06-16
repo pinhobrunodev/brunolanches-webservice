@@ -141,7 +141,7 @@
 </details>
       
  <details>
-      <summary> Implement class Product ⏳  </summary>
+      <summary> Implement class Product ✅  </summary>
        
 - [X] Implement Product classe
       
