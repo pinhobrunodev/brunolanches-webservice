@@ -1,6 +1,7 @@
 package com.pinhobrunodev.brunolanches.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +18,26 @@ public class CategoryService {
 
 	@Autowired
 	private CategoryRepository repository;
-	
+
 	@Transactional(readOnly = true)
-	public List<CategoryDTO> findAllCategories(){
-		return repository.findAll().stream().map(x->new CategoryDTO(x)).collect(Collectors.toList());
+	public List<CategoryDTO> findAllCategories() {
+		return repository.findAll().stream().map(x -> new CategoryDTO(x)).collect(Collectors.toList());
 	}
+
 	@Transactional(readOnly = true)
 	public CategoryDTO findCategoryById(Long id) {
-		return repository.findById(id).map(x->new CategoryDTO(x)).orElseThrow(ExceptionCategoryNotFound::new);
+		return repository.findById(id).map(x -> new CategoryDTO(x)).orElseThrow(ExceptionCategoryNotFound::new);
 	}
+
 	@Transactional(readOnly = true)
 	public CategoryDTO findCategoryByName(String name) {
 		Category validation = repository.findByName(name.toUpperCase());
-		if(validation == null) {
+		if (validation == null) {
 			throw new ExceptionCategoryNotFound();
 		}
 		return new CategoryDTO(repository.findByName(name.toUpperCase()));
 	}
-	
-	
+
+
+
 }

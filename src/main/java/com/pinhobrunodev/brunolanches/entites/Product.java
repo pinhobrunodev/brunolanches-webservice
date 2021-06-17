@@ -1,11 +1,16 @@
 package com.pinhobrunodev.brunolanches.entites;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
@@ -24,6 +29,10 @@ public class Product implements Serializable {
 	@DecimalMin(value = "0.00", message = "ERRO: The value must be higher than 0.00")
 	@Digits(integer = 3, fraction = 2, message = "ERROR:Invalid input")
 	private Double price;
+
+	@ManyToMany
+	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+	private Set<Category> categories = new HashSet<>();
 
 	public Product() {
 
@@ -69,6 +78,10 @@ public class Product implements Serializable {
 		this.price = price;
 	}
 
+	public Set<Category> getCategories() {
+		return categories;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -93,7 +106,5 @@ public class Product implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
 }

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.pinhobrunodev.brunolanches.dto.ProductDTO;
-import com.pinhobrunodev.brunolanches.dto.ProductInsertDTO;
+import com.pinhobrunodev.brunolanches.dto.ProductDTO;
 import com.pinhobrunodev.brunolanches.services.ProductService;
 
 @RestController
@@ -28,13 +28,13 @@ public class ProductController {
 	private ProductService service;
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ProductDTO> insert(@RequestBody ProductInsertDTO dto) {
+	public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto) {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(service.insert(dto));
 	}
 
 	@PutMapping(value = "/update",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ProductDTO> update(@RequestBody ProductInsertDTO dto) {
+	public ResponseEntity<ProductDTO> update(@RequestBody ProductDTO dto) {
 		return ResponseEntity.ok().body(service.update(dto));
 
 	}
