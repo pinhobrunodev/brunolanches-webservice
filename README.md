@@ -178,9 +178,9 @@
 </details>
       
 <details>
-      <summary> Relation between Product and Category ⏳ </summary>
+      <summary> Relation between Product and Category ✅ </summary>
      <ul>
-           <li>- [ ] Implement relation between Product and Category </li>
+           <li>- [X] Implement relation between Product and Category </li>
       </ul>
 </details>
 
