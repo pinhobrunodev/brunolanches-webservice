@@ -183,10 +183,10 @@
            <li>- [X] Implement relation between Product and Category </li>
       </ul>
 </details>
+
     
     
-    
-    <details>
+<details>
       <summary> OrderItem ⌛️ </summary>
      <ul>
            <li>- [ ] ⌛️ </li>
