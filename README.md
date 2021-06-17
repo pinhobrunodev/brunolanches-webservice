@@ -207,7 +207,7 @@
 # 📌 Project Endpoints
 
 
-      http://localhost:8080[Insert the Endpoint below]
+     https://bruno-lanches.herokuapp.com/[Insert the Endpoint below]
       
       
       
