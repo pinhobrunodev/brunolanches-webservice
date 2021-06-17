@@ -187,10 +187,11 @@
     
     
 <details>
-      <summary> OrderItem ⌛️ </summary>
+      <summary> Relation between Product and Order ✅ </summary>
      <ul>
-           <li>- [ ] ⌛️ </li>
+          <li>- [X] Implement relation between Product and Order </li>
       </ul>
+ 
 </details>
 
       
