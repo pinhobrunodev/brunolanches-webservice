@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,6 +55,10 @@ public class OrderController {
 	}
 	
 
+	@GetMapping(value = "/pageable",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Page<OrderDTO>> pageableSearch(Pageable pageable){
+		return ResponseEntity.ok().body(service.pageableSearch(pageable));
+	}
 	
 	@PutMapping(value = "/set/{id}/delivered",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<OrderDTO> setDelivered(@PathVariable Long id){

@@ -5,6 +5,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -106,5 +108,13 @@ public class OrderService {
 			throw new ExceptionOrderEmptyList();
 		}
 		return repository.findAllOrdersByInstantASC().stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
+	}
+	
+	@Transactional(readOnly = true)
+	public Page<OrderDTO> pageableSearch(Pageable pageable){
+		deliverymanRepository.findAll();
+		userRepository.findAll();
+		Page<Order> result = repository.findAll(pageable);
+		return result.map(x->new OrderDTO(x));
 	}
 }
