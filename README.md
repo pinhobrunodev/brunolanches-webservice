@@ -126,7 +126,7 @@
       
       
 <details>
-      <summary>  Category task 11/13 =  ✅ 2  = ⏳ </summary>
+      <summary>  Category  ✅ </summary>
       
       
       
@@ -143,8 +143,6 @@
     <li> - [X] findAllCategories()</li> 
          <li> - [X] findCategoryById()</li>
             <li> - [X] findCategortByName()</li>
-            <li> - [ ⏳ ] findAllProductsByCategoryId() </li>
-             <li> - [  ⏳ ] findAllProductsByCategoryName() </li>
       </ul>
 - [X] Implement CategoryController
 - [X] Implement CategoryExceptions
