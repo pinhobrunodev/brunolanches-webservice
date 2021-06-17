@@ -5,7 +5,6 @@ import java.time.Instant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pinhobrunodev.brunolanches.dto.OrderDTO;
 import com.pinhobrunodev.brunolanches.dto.OrderInsertDTO;
 import com.pinhobrunodev.brunolanches.entites.Order;
 import com.pinhobrunodev.brunolanches.entites.enums.OrderStatus;
@@ -31,17 +30,4 @@ public class OrderMapper {
 		return entity;
 	}
 	
-	public OrderDTO toOrderDTO(Order entity) {
-		OrderDTO dto = new OrderDTO();
-		dto.setId(entity.getId());
-		dto.setMoment(entity.getMoment());
-		dto.setStatus(entity.getStatus());
-		dto.setAddress(entity.getUser().getAddress());
-		dto.setClient_name(entity.getUser().getName());
-		dto.setClient_phone(entity.getUser().getPhone());
-		dto.setNumber(entity.getUser().getNumber());
-		dto.setDeliveryman_name(entity.getDeliveryman().getName());
-		dto.setDeliveryman_phone(entity.getDeliveryman().getPhone());
-		return dto;
-	}
 }

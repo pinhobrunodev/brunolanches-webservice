@@ -10,8 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pinhobrunodev.brunolanches.dto.OrderDTO;
 import com.pinhobrunodev.brunolanches.dto.OrderInsertDTO;
+import com.pinhobrunodev.brunolanches.dto.ProductDTO;
 import com.pinhobrunodev.brunolanches.entites.Deliveryman;
 import com.pinhobrunodev.brunolanches.entites.Order;
+import com.pinhobrunodev.brunolanches.entites.Product;
 import com.pinhobrunodev.brunolanches.entites.User;
 import com.pinhobrunodev.brunolanches.entites.enums.OrderStatus;
 import com.pinhobrunodev.brunolanches.exceptions.deliveryman.ExceptionDeliverymanNotFound;
@@ -22,6 +24,7 @@ import com.pinhobrunodev.brunolanches.exceptions.user.ExceptionUserNotFound;
 import com.pinhobrunodev.brunolanches.mapper.OrderMapper;
 import com.pinhobrunodev.brunolanches.repositories.DeliverymanRepository;
 import com.pinhobrunodev.brunolanches.repositories.OrderRepository;
+import com.pinhobrunodev.brunolanches.repositories.ProductRepository;
 import com.pinhobrunodev.brunolanches.repositories.UserRepository;
 import com.pinhobrunodev.brunolanches.utils.OrderMessageUtils;
 
@@ -36,6 +39,8 @@ public class OrderService {
 	private UserRepository userRepository;
 	@Autowired
 	private DeliverymanRepository deliverymanRepository;
+	@Autowired
+	private ProductRepository productRepository;
 
 	@Transactional
 	public OrderDTO insert(OrderInsertDTO dto) {
@@ -48,6 +53,10 @@ public class OrderService {
 			throw new ExceptionDeliverymanNotFound();
 		}
 		Order entity = mapper.toEntity(dto);
+		for(ProductDTO x : dto.getProducts()) {
+			Product aux = productRepository.getOne(x.getId());
+			entity.getProducts().add(aux);
+		}
 		repository.save(entity);
 		return new OrderDTO(entity);
 	}
@@ -87,7 +96,7 @@ public class OrderService {
 		Order order = repository.getOne(id);
 		order.setStatus(OrderStatus.DELIVERED);
 		repository.save(order);
-		return mapper.toOrderDTO(order);
+		return new OrderDTO(order);
 	}
 
 	@Transactional(readOnly = true)

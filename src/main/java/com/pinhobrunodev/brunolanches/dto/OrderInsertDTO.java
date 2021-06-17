@@ -2,6 +2,9 @@ package com.pinhobrunodev.brunolanches.dto;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
@@ -18,6 +21,7 @@ public class OrderInsertDTO implements Serializable {
 	private OrderStatus status;
 	private Long user_id;
 	private Long deliveryman_id;
+	private List<ProductDTO> products = new ArrayList<>();
 
 	public OrderInsertDTO() {
 
@@ -29,8 +33,14 @@ public class OrderInsertDTO implements Serializable {
 		status = order.getStatus();
 		user_id = order.getUser().getId();
 		deliveryman_id = order.getDeliveryman().getId();
+		products = order.getProducts().stream().map(x-> new ProductDTO(x)).collect(Collectors.toList());
 	}
 
+	public List<ProductDTO> getProducts() {
+		return products;
+	}
+	
+	
 	public Long getDeliveryman_id() {
 		return deliveryman_id;
 	}
