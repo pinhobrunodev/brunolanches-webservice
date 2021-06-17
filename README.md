@@ -117,7 +117,7 @@
     <li> - [X] findById()</li>
     <li> - [X] insert()</li>
     <li> - [X] setDelivered() </li>
-    <li> - [ building... 🔨 ] pagedSearch() </li>       
+    <li> - [X] pageableSearch() </li>       
       </ul>
 - [X] Implement OrderController
 - [X] Implement OrderExceptions
@@ -252,6 +252,7 @@
 | GET       	| /orders/pending    	| List all orders pending   	|
 | GET       	| /orders/delivered  	| List all orders delivered 	|
 | GET       	| /orders/{id}/found 	| List order by id          	|
+| GET       	| /orders/pageable 	    | Pageable Search          	    |
 | POST      	| /orders            	| Insert a order            	|
 | PUT      	| /orders/set/{id}/delivered            	| Update a order status to delivered             	|
       
