@@ -118,7 +118,7 @@
 </details>
 
 <details>
-      <summary> Relation between classes ✅ </summary>
+      <summary> Relation between Order-User-Deliveryman ✅ </summary>
      <ul>
            <li>- [X] Implement relation between ORDER-USER-DELIVERYMAN</li>
       </ul>
@@ -181,6 +181,15 @@
       <summary> Relation between Product and Category ✅ </summary>
      <ul>
            <li>- [X] Implement relation between Product and Category </li>
+      </ul>
+</details>
+    
+    
+    
+    <details>
+      <summary> OrderItem ⌛️ </summary>
+     <ul>
+           <li>- [ ] ⌛️ </li>
       </ul>
 </details>
 
